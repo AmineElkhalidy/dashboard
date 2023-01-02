@@ -6,7 +6,7 @@ import Topbar from "./scenes/global/Topbar";
 import Dashboard from "./scenes/dashboard";
 import Login from "./scenes/auth/Login";
 
-import Sidebar from "./scenes/global/Sidebar";
+import SideBar from "./scenes/global/Sidebar";
 // import Team from "./scenes/team";
 // import Invoices from "./scenes/invoices";
 // import Contacts from "./scenes/contacts";
@@ -28,7 +28,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <Sidebar />
+          <SideBar />
           <main className="content">
             <Topbar />
             <Routes>
