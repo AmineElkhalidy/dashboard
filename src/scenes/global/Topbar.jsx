@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Box, IconButton, useTheme } from "@mui/material";
 import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material/InputBase";
@@ -18,19 +18,28 @@ const Topbar = () => {
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
 
+  // Search bar state
+  const [show, setShow] = useState(false);
+
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
       {/* Search bar */}
-      <Box
-        display="flex"
-        backgroundColor={colors.primary[400]}
-        borderRadius="3px"
-      >
-        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
-        <IconButton type="button" sx={{ p: 1 }}>
+      {!show ? (
+        <IconButton type="button" sx={{ p: 1 }} onClick={() => setShow(true)}>
           <Search />
         </IconButton>
-      </Box>
+      ) : (
+        <Box
+          display="flex"
+          backgroundColor={colors.primary[400]}
+          borderRadius="3px"
+        >
+          <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+          <IconButton type="button" sx={{ p: 1 }}>
+            <Search />
+          </IconButton>
+        </Box>
+      )}
 
       {/* Icons */}
       <Box display="flex">
