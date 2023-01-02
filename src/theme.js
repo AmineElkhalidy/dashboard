@@ -2,7 +2,6 @@ import { createContext, useState, useMemo } from "react";
 import { createTheme } from "@mui/material/styles";
 
 // Color design tokens
-
 export const tokens = (mode) => ({
   ...(mode === "dark"
     ? {
@@ -165,6 +164,7 @@ export const themeSettings = (mode) => {
     typography: {
       fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
       fontSize: 12,
+
       h1: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
         fontSize: 40,
