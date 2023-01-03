@@ -67,17 +67,18 @@ const SideBar = () => {
         "& .ps-sidebar-root": {
           background: "transparent !important",
         },
+
         "& .ps-sidebar-container": {
           background: `${colors.primary[400]} !important`,
         },
         "& .ps-menu-item": {
           padding: "5px 35px 5px 20px !important",
         },
-        "& .ps-menu-root:hover": {
+        "& .ps-menu-button:hover": {
           color: "#868DFB !important",
         },
-        "& .ps-menu-item.active": {
-          color: "#6870FA !important",
+        "& .ps-menu-button.active": {
+          color: "#6870fa !important",
         },
       }}
     >
@@ -121,7 +122,7 @@ const SideBar = () => {
 
               <Box textAlign="center">
                 <Typography
-                  variant="h2"
+                  variant="h3"
                   color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ mt: "10px" }}
@@ -145,6 +146,13 @@ const SideBar = () => {
               setSelected={setSelected}
             />
 
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Data
+            </Typography>
             <Item
               title="Manage teams"
               to="/team"
@@ -169,6 +177,14 @@ const SideBar = () => {
               setSelected={setSelected}
             />
 
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Pages
+            </Typography>
+
             <Item
               title="Profile Form"
               to="/form"
@@ -192,6 +208,14 @@ const SideBar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Charts
+            </Typography>
 
             <Item
               title="Bar Chart"
