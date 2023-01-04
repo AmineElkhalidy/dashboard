@@ -32,31 +32,53 @@ const Login = () => {
         {/* Credentiels Box */}
         <Box>
           {/* Welcoming */}
-          <Box textAlign="center">
+          <Box textAlign="center" mb={4}>
             <Typography
               variant="h2"
               fontWeight="600"
               color={colors.greenAccent[400]}
               mb="5px"
             >
-              Welcome back
+              Welcome Back
             </Typography>
-            <Typography variant="h6">Please enter your Credentiels</Typography>
+            <Typography variant="h6" color={colors.grey[200]}>
+              Please enter your Credentiels
+            </Typography>
           </Box>
 
           {/* Form */}
-          <Box variant="form" display="flex" flexDirection="column">
+          <Box variant="form" display="flex" flexDirection="column" gap={2}>
             {/* Email */}
-            <Box></Box>
+            <Box borderRadius={1}>
+              <TextField label="Email" variant="outlined" color="secondary" />
+            </Box>
 
             {/* Password */}
-            <Box></Box>
+            <Box>
+              <TextField
+                label="Password"
+                variant="outlined"
+                color="secondary"
+              />
+            </Box>
 
             {/* Remember & Forgot password */}
             <Box></Box>
 
             {/* Buttons box */}
-            <Box></Box>
+            <Box>
+              <Button
+                variant="contained"
+                color="secondary"
+                sx={{
+                  width: "100%",
+                  padding: ".75rem",
+                  color: "white",
+                }}
+              >
+                Login
+              </Button>
+            </Box>
           </Box>
         </Box>
 
