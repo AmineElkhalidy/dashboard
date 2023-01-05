@@ -6,7 +6,7 @@ import { Menu, MenuItem, Sidebar, useProSidebar } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 
 // Link
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Tokens
 import { tokens } from "../../theme";
@@ -34,6 +34,9 @@ import UserImg from "../../assets/images/user.png";
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  let activeLink = {
+    color: colors.blueAccent[500],
+  };
 
   return (
     <MenuItem
@@ -44,7 +47,12 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
         backgroundColor: "transparent",
       }}
       icon={icon}
-      routerLink={<Link to={to} />}
+      routerLink={
+        <NavLink
+          style={({ isActive }) => (isActive ? activeLink : undefined)}
+          to={to}
+        />
+      }
     >
       <Typography>{title}</Typography>
     </MenuItem>
