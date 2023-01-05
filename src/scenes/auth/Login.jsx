@@ -11,8 +11,10 @@ import {
   FormControlLabel,
   useTheme,
 } from "@mui/material";
-
 import { tokens } from "../../theme";
+
+// Link
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const theme = useTheme();
@@ -66,7 +68,7 @@ const Login = () => {
             <Box></Box>
 
             {/* Buttons box */}
-            <Box>
+            <Box display="flex" gap={1}>
               <Button
                 variant="contained"
                 color="secondary"
@@ -74,9 +76,30 @@ const Login = () => {
                   width: "100%",
                   padding: ".75rem",
                   color: "white",
+                  letterSpacing: "1px",
+                  fontWeight: "600",
                 }}
               >
                 Login
+              </Button>
+
+              <Button
+                variant="contained"
+                color="secondary"
+                sx={{
+                  width: "100%",
+                  padding: ".75rem",
+                  color: "white",
+                  letterSpacing: "1px",
+                  fontWeight: "600",
+                }}
+              >
+                <Link
+                  style={{ textDecoration: "none", color: "whitesmoke" }}
+                  to="/dashboard"
+                >
+                  Demo
+                </Link>
               </Button>
             </Box>
           </Box>
