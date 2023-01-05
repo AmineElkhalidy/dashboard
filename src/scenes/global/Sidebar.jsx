@@ -49,7 +49,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       icon={icon}
       routerLink={
         <NavLink
-          style={({ isActive }) => (isActive ? activeLink : undefined)}
+          className={({ isActive }) => (isActive ? "activeLink" : undefined)}
           to={to}
         />
       }
